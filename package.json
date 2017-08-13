@@ -1,0 +1,30 @@
+{
+  "name": "task-manager",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "dateformat": "^2.0.0",
+    "input-moment": "^0.3.5",
+    "moment": "^2.18.1",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.2",
+    "react-bootstrap-date-picker": "^5.1.0",
+    "react-bootstrap-date-time-picker": "0.0.3",
+    "react-bootstrap-datetime": "0.0.9",
+    "react-bootstrap-datetimepicker": "0.0.22",
+    "react-bootstrap-validation": "^0.1.11",
+    "react-datetime": "^2.9.0",
+    "react-dom": "^15.6.1",
+    "react-fontawesome": "^1.6.1",
+    "react-scripts": "1.0.11",
+    "react-star-rating": "^1.4.2",
+    "react-stars": "^2.2.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

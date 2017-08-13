@@ -1,0 +1,46 @@
+/*.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+*/
+.panel-heading a {
+  cursor: pointer;
+}
+.taskPanel .panel-title.row a {
+  /*border: 1px solid red;*/
+  display: flex;
+  align-items: center;
+}
+
+.taskPanel th, .taskPanel td {
+  vertical-align: middle !important;
+}
+
+
+/*div[class^="col-"], div[class*=" col-"] {
+  border: 1px solid green;
+}*/
+
+div.progress {
+  margin: 0;
+}
