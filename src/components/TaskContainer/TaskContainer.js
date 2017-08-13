@@ -10,7 +10,8 @@ class TaskContainer extends Component {
         setInterval(() => {
             this.props.tasks.sort((a, b) => 
                         //this.calculateTimeProgress(a) - this.calculateTimeProgress(b)
-                        .5-Math.random()
+                        //.5-Math.random() // random shuffle
+                        -a.priority +b.priority
                     );
             var taskComponents = this.generateTaskComponents(this.props.tasks);
             this.setState({taskComponents: taskComponents});
@@ -24,6 +25,9 @@ class TaskContainer extends Component {
     }
 
     calculateTimeProgress(task) {
+        if(task.isComplete){
+            return 100;
+        }
         var elapsed = new Date() - task.startDate;
         var total = task.deadlineDate - task.startDate;
         return Math.min(100, 100*elapsed/total);

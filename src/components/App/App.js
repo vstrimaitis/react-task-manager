@@ -17,7 +17,7 @@ class App extends Component {
               startDate:    new Date(2017, 7, 12, 16, 10),
               deadlineDate: new Date(2017, 7, 12, 16, 54),
               id: generateId(),
-              isComplete: false
+              isComplete: true
             },
             {
               name: "Task 2",
@@ -44,7 +44,7 @@ class App extends Component {
               startDate:    new Date(2017, 7, 12, 15, 44),
               deadlineDate: new Date(2017, 7, 13, 20, 48),
               id: generateId(),
-              isComplete: false
+              isComplete: true
             },
             {
               name: "Task 5",

@@ -12,10 +12,15 @@ class Task extends Component {
         this.startDate    = props.params.startDate;
         this.deadline     = props.params.deadlineDate;
         this.id           = props.params.id;
+        this.isComplete   = props.params.isComplete;
         this.dateFormat   = "yyyy-mm-dd HH:MM:ss";
     }
     render() {
         const isLate = this.props.timeProgress === 100;
+        const panelStyle = this.isComplete ? "success" :
+                           !isLate ? "primary" : "danger";
+        const progressStyle = this.isComplete ? "success" :
+                              !isLate ? "info" : "danger";
         const title = (
             <Row>
                 <Col md={3}>
@@ -24,7 +29,7 @@ class Task extends Component {
                 <Col md={9}>
                     <ProgressBar
                         now={this.props.timeProgress} 
-                        bsStyle={!isLate ? "info" : "danger"}/>
+                        bsStyle={progressStyle}/>
                         {/*
                     <span className="pull-right">Deadline: <b>{dateFormat(this.deadline, this.dateFormat)}</b></span>
                     */}
@@ -33,7 +38,7 @@ class Task extends Component {
         )
         return (
             <Panel  collapsible
-                    bsStyle={!isLate ? "primary" : "danger"}
+                    bsStyle={panelStyle}
                     header={title}
                     className="taskPanel">
                 <Table responsive={true}>
@@ -58,7 +63,7 @@ class Task extends Component {
                             <th>Progress</th>
                             <td><ProgressBar
                                         now={this.props.timeProgress} 
-                                        bsStyle={!isLate ? "info" : "danger"}/></td>
+                                        bsStyle={progressStyle}/></td>
                         </tr>
                         <tr>
                             <th>ID</th>
