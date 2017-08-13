@@ -13,31 +13,21 @@ class Task extends Component {
         this.deadline     = props.params.deadlineDate;
         this.id           = props.params.id;
         this.dateFormat   = "yyyy-mm-dd HH:MM:ss";
-        this.state        = {time: this.calculateTimeProgress()};
-        setInterval(() => {
-            var timeProgress = this.calculateTimeProgress();
-            this.setState({time: timeProgress});
-        }, 500);
     }
-
-    calculateTimeProgress() {
-        var elapsed = new Date() - this.startDate;
-        var total = this.deadline - this.startDate;
-        return Math.min(100, 100*elapsed/total);
-    }
-
     render() {
-        const isLate = this.state.time === 100;
+        const isLate = this.props.timeProgress === 100;
         const title = (
             <Row>
                 <Col md={3}>
                     <h3><b>{this.name}</b></h3>
                 </Col>
                 <Col md={9}>
-                    {/*<ProgressBar
-                        now={this.state.time} 
-                        bsStyle={!isLate ? "info" : "danger"}/>*/}
+                    <ProgressBar
+                        now={this.props.timeProgress} 
+                        bsStyle={!isLate ? "info" : "danger"}/>
+                        {/*
                     <span className="pull-right">Deadline: <b>{dateFormat(this.deadline, this.dateFormat)}</b></span>
+                    */}
                 </Col>
             </Row>
         )
@@ -67,7 +57,7 @@ class Task extends Component {
                         <tr>
                             <th>Progress</th>
                             <td><ProgressBar
-                                        now={this.state.time} 
+                                        now={this.props.timeProgress} 
                                         bsStyle={!isLate ? "info" : "danger"}/></td>
                         </tr>
                         <tr>
